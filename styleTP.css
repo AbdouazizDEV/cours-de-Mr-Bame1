@@ -1,0 +1,72 @@
+/* Style de base pour la mise en page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.banniere {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* au scroll le menu-nav doit rester visoible route en haut de la page et rester fixe marging-top 0 */
+.menu-nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-top: 0;
+}
+
+.menu-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.menu-nav a:hover {
+    background-color: #333;
+    color: white;
+}
+
+#les_sessions {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.section-exercice {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #666;
+    margin: 10px 0;
+}

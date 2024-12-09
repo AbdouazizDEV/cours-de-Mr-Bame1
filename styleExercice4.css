@@ -1,0 +1,103 @@
+/* Styles pour l'exercice 4 */
+#exercice4 {
+    padding: 20px;
+}
+
+#exercice4 .description {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#exercice4 .description ul {
+    margin-left: 20px;
+}
+
+/* Styles pour la partie analyse des prix */
+#exercice4 .analyse-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#exercice4 .prix-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#exercice4 .prix {
+    background-color: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+#exercice4 .resultat {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#exercice4 .resultat p {
+    margin: 10px 0;
+}
+
+/* Styles pour la partie produit */
+#exercice4 .produit-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#exercice4 .info-container {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#exercice4 .initial-info {
+    background-color: #f8f9fa;
+}
+
+#exercice4 .prix-info {
+    background-color: #e9ecef;
+}
+
+#exercice4 .updated-info {
+    background-color: #e3f2fd;
+}
+
+#exercice4 h3 {
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#exercice4 h4 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#exercice4 .info-container p {
+    margin: 8px 0;
+}
+
+#exercice4 .info-container strong {
+    color: #333;
+    width: 120px;
+    display: inline-block;
+}
+
+/* Animation au survol */
+#exercice4 .prix:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
