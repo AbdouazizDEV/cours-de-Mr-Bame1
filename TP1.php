@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travaux Pratiques PHP</title>
-    <link rel="stylesheet" href="styleTP.css">
-    <link rel="stylesheet" href="styleExercice1.css">
-    <link rel="stylesheet" href="styleExercice2.css">
-    <link rel="stylesheet" href="styleExercice3.css">
-    <link rel="stylesheet" href="styleExercice4.css">
+    <link rel="stylesheet" href="./Style/styleTP.css">
+    <link rel="stylesheet" href="./Style/styleExercice1.css">
+    <link rel="stylesheet" href="./Style/styleExercice2.css">
+    <link rel="stylesheet" href="./Style/styleExercice3.css">
+    <link rel="stylesheet" href="./Style/styleExercice4.css">
 </head>
 <body>
     <?php
@@ -45,7 +45,7 @@
 
             <div class="results">
                 <?php
-                require 'fonctionsExercice1.php';
+                require './Fonctions/fonctionsExercice1.php';
                 // Exécution de la recherche des combinaisons
                 findValidCombinations();
                 ?>
@@ -70,7 +70,7 @@
 
             <div class="results-container">
                 <?php
-                require 'FonctionExercice2.php';
+                require './Fonctions/FonctionExercice2.php';
                 displayResults();
                 ?>
             </div>
@@ -82,16 +82,16 @@
             
             <div class="description">
                 <h3>Description du problème :</h3>
-                <ul>
+                <!-- <ul>
                     <li>Création d'une ligne horizontale de 8 étoiles</li>
                     <li>Création d'un carré de 8x8 étoiles</li>
                     <li>Création de triangles rectangles avec différentes orientations</li>
                     <li>Création des mêmes figures en version creuse</li>
-                </ul>
+                </ul> -->
             </div>
 
             <?php
-            require 'fonctionsExercice3.php';
+            require './Fonctions/fonctionsExercice3.php';
             displayAllFigures();
             ?>
         </section>
@@ -123,15 +123,15 @@
     </div>
 
     <?php
-    require 'fonctionsExercice4.php';
+    require './Fonctions/fonctionsExercice4.php';
     echo "<div class='partie1'>";
-    echo "<h3>Partie 1 : Analyse des prix</h3>";
-    analyserPrix();
-    echo "</div>";
-    
-    echo "<div class='partie2'>";
-    echo "<h3>Partie 2 : Informations produit</h3>";
-    gererProduit();
+        echo "<h3>Partie 1 : Analyse des prix</h3>";
+        analyserPrix();
+        echo "</div>";
+        
+        echo "<div class='partie2'>";
+        echo "<h3>Partie 2 : Informations produit</h3>";
+        gererProduit();
     echo "</div>";
     ?>
 </section>

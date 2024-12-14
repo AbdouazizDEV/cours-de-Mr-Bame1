@@ -1,0 +1,223 @@
+/* Reset et style de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f6fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Style du formulaire */
+form {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Style des conteneurs de champs */
+form > div {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+form > div:hover {
+    background-color: #f8f9fa;
+}
+
+/* Style des labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Style des champs input standards */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+/* Style spécifique pour les select et optgroup */
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+optgroup {
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+optgroup option {
+    font-weight: normal;
+    padding: 8px 10px;
+    background-color: #fff;
+    margin-left: 15px;
+}
+
+/* Style des champs textarea */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Style des groupes radio */
+.option, .promo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.option label, .promo label {
+    display: inline;
+    margin: 0;
+    margin-right: 20px;
+}
+
+input[type="radio"] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4a90e2;
+}
+
+/* Style des boutons */
+div:last-child {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: #4a90e2;
+    color: white;
+}
+
+input[type="reset"] {
+    background-color: #e74c3c;
+    color: white;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+input[type="reset"]:hover {
+    background-color: #c0392b;
+}
+
+/* États des champs */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Style des champs invalides et valides */
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: #e74c3c;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    form {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    div:last-child {
+        flex-direction: column;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+    }
+
+    .option, .promo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+form > div {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Style spécifique pour les select au survol */
+select:hover {
+    border-color: #4a90e2;
+}
+
+/* Style pour les options au survol */
+option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style pour le placeholder des select */
+select option[value=""] {
+    color: #757575;
+}
+
+/* Style pour les labels des champs requis */
+label::after {
+    content: " *";
+    color: #e74c3c;
+}

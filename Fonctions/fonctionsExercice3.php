@@ -17,10 +17,10 @@ function createSquare($size, $hollow = false) {
     $output = '<div class="figure">';
     $output .= '<h3>' . ($hollow ? 'Carré creux' : 'Carré plein') . ' ' . $size . 'x' . $size . '</h3>';
     $output .= '<pre>';
-    
-    for ($i = 0; $i < $size; $i++) {
-        $output .= createLine($size, $hollow, $i) . "\n";
-    }
+        
+        for ($i = 0; $i < $size; $i++) {
+            $output .= createLine($size, $hollow, $i) . "\n";
+        }
     
     $output .= '</pre></div>';
     return $output;
