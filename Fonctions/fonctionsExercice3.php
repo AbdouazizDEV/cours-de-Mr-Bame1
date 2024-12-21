@@ -3,7 +3,7 @@
 function createLine($length, $hollow = false, $position = 0) {
     $line = '';
     for ($i = 0; $i < $length; $i++) {
-        if ($hollow && $i > 0 && $i < $length - 1 && $position > 0 && $position < $length - 1) {
+        if ($hollow && ($i > 0 && $i < $length - 1) && ($position > 0 && $position < $length - 1)) {
             $line .= '&nbsp;&nbsp;';
         } else {
             $line .= '* ';
@@ -103,7 +103,7 @@ function displayAllFigures() {
     // Lignes
     echo '<div class="figures-row">';
     echo '<h3 class="figures-title">Lignes orizontales</h3>';
-    echo createLine($size, false);
+    //echo createLine($size, false);
     echo createLine($size, true);
     echo '</div>';
     

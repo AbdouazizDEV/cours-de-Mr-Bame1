@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: php-project
-    env: docker
-    dockerfilePath: ./Dockerfile
-    httpPort: 8013
-    envVars:
-      - key: APACHE_DOCUMENT_ROOT
-        value: /opt/lampp/htdocs

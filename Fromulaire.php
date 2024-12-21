@@ -45,7 +45,8 @@
     </style>
 </head>
 <body>
-    <form action="recupForme.php" method="post">
+    <form action="recupForme.php" method="post" enctype="multipart/form-data">
+        
         <label for="nom">Nom:</label>
         <input type="text" id="nom" name="nom"><br>
 
@@ -68,6 +69,9 @@
              <input type="checkbox" id="nationnalite" name="nationnalite" value="espagnole"><label for="nationnalite">Espagnole</label>
              <input type="checkbox" id="nationnalite" name="nationnalite" value="italienne"><label for="nationnalite">Italienne</label><br>
         </div>
+       <!-- ajouter un input de type de file -->
+        <label for="photo" name="Max_FILE_SIZE" value="30000000" >Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*"><br>
         
         <label for="sexe">Sexe:</label>
         <input type="radio" id="sexe" name="sexe" value="Homme"><label for="sexe">Homme</label>

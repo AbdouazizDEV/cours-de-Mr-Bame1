@@ -1,0 +1,85 @@
+/* StyleLogin.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffa6d2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    width: 760px;
+    height: 500px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form, .login-info {
+    padding: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    background: white;
+    width: 146%;
+}
+
+.login-info {
+    background: #ff007f;
+    color: white;
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 15px 20px;
+    width: 95%;
+    margin: 12px 0;
+    border: 2px solid #ff007f;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #e60074;
+    box-shadow: 0 0 8px #e60074;
+}
+
+button {
+    background-color: #ff007f;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 18px;
+    width: 116%;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e60074;
+    transform: scale(1.05);
+}
+
+a {
+    color: #ff007f;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: #e60074;
+    text-decoration: underline;
+}

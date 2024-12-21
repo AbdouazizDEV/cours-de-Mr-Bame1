@@ -1,4 +1,4 @@
-<?php
+ <?php
 // Fonction pour séparer un nombre en ses chiffres individuels
 function getDigits($number) {
     return [
