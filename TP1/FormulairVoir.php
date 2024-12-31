@@ -61,6 +61,11 @@
                 <option value="cabriolet">Cabriolet</option>
             </select>
         </div>
+        <!-- ajouter une photo -->
+         <div class="photo">
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" required><br><br>
+        </div>
         <div class="quantite_unitaire">
             <label for="quantite_unitaire">Quantite unitaire:</label>
             <input type="number" id="quantite_unitaire" name="quantite_unitaire" required><br><br>

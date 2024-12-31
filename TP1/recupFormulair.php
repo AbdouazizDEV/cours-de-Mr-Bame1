@@ -119,6 +119,9 @@
         $marque = htmlspecialchars($_POST['marque']);
         $modele = htmlspecialchars($_POST['modele']);
         $categorie = htmlspecialchars($_POST['categorie']);
+        $photo = htmlspecialchars($_POST['photo']);
+        $nomDeImage = basename($photo);
+        $chaminImage = basename($nomDeImage);
         $quantite_unitaire = htmlspecialchars($_POST['quantite_unitaire']);
         $quantite_disponible = htmlspecialchars($_POST['quantite_disponible']);
         $date_achat = htmlspecialchars($_POST['date_achat']);
@@ -126,6 +129,10 @@
         $option_promo = isset($_POST['option_promo']) ? htmlspecialchars($_POST['option_promo']) : '';
         $description = htmlspecialchars($_POST['description']);
 
+        /* code pour déplacer l'image vers la racine de notre projet */
+        move_uploaded_file($photo, $chaminImage);
+
+        // Affichage du formulaire de confirmation
         echo '<div class="container">';
         echo '<h1>Récapitulatif des informations</h1>';
 
@@ -139,6 +146,8 @@
         echo '<div class="info-item"><span class="info-label">Date d\'achat :</span><span class="info-value">' . date('d/m/Y', strtotime($date_achat)) . '</span></div>';
         echo '<div class="info-item"><span class="info-label">Option :</span><span class="info-value"><span class="status status-' . strtolower($option) . '">' . $option . '</span></span></div>';
         echo '<div class="info-item"><span class="info-label">En promotion :</span><span class="info-value"><span class="status promo-' . strtolower($option_promo) . '">' . $option_promo . '</span></span></div>';
+        /* affichage de l'image */
+        echo '<div class="info-item"><span class="info-label">Photo :</span><span class="info-value"><img style="width: 50%;" src="https://i.gaw.to/content/photos/62/32/623263-les-10-voitures-les-plus-rapides-au-monde.jpg?1024x640" alt="Photo"></span></div>';
         
         echo '<div class="description-section">';
         echo '<div class="info-label">Description :</div>';

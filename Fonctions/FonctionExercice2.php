@@ -18,7 +18,7 @@ function areDigitsValid($digits) {
 }
 
 // Fonction qui génère tous les quadruplets possibles pour une somme N
-function findAllQuadruplets($N) {
+function findAllQuadruplets($N) { 
     $solutions = [];
     // Génère tous les quadruplets possibles où a < b < c < d
     for ($a = 1; $a <= 6; $a++) {
