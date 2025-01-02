@@ -13,6 +13,8 @@
                 <li><a href="SendURL.php">Send URL</a></li>
                 <li><a href="ReceiveURL.php">Receive URL</a></li>
                 <li><a href="inscriptionEtudiant.php">Inscription</a></li>
+                <li><a href="AjoutOffre.php">Nos Offres</a></li>
+
             </ul>
         </nav>
     </header>
