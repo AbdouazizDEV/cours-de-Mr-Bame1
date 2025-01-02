@@ -91,7 +91,7 @@
         <h2>DOSSIER D'INSCRIPTION ADMINISTRATIVE</h2>
     </div>
 
-    <form action="inscriptionEtudiant.php" method="POST">
+    <form action="traiterInscription.php" method="POST" enctype="multipart/form-data">
         <div class="id-numbers">
             <div>
                 <label>N° Carte d'Etudiant</label>
@@ -132,7 +132,13 @@
                 </div>
                 <div class="form-group">
                     <label>Sexe</label>
-                    <input type="text" name="sexe" class="small-input">
+                    <input type="radio" name="sexe" class="small-input">
+                    <label for="sexe_homme">Homme</label>
+                    <input type="radio" name="sexe" class="small-input">
+                    <label for="sexe_femme">Femme</label>
+                    <input type="radio" name="sexe" class="small-input">
+                    <label for="sexe_autre">Autre</label>
+                    <input type="radio" name="sexe" class="small-input">
                 </div>
                 <div class="form-group">
                     <label>Prénom 3</label>
@@ -272,10 +278,15 @@
                 </div>
             </div>
         </div>
+        <fieldset>
+            <legend>Photo de profil</legend>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </fieldset>
+        <br>
         <!-- button de couleur ff007f-->
-    <div class="form-row">
-         <button type="submit" style="background-color: #ff007f; color: white; padding: 10px 20px; border: none; cursor: pointer;">Envoyer</button>
-    </div>
+        <div class="form-row">
+            <button type="submit" style="background-color: #ff007f; color: white; padding: 10px 20px; border: none; cursor: pointer;">Envoyer</button>
+        </div>
 
     </form>
 </body>
