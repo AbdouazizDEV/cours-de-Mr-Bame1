@@ -68,82 +68,82 @@ if(isset($_FILES['photos'])) {
         .carousel {
         position: relative;
         margin-bottom: 20px;
-    }
+        }
 
-    .carousel-container {
-        position: relative;
-        overflow: hidden;
-    }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
 
-    .main-image {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 8px;
-        transition: opacity 0.3s ease;
-    }
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: opacity 0.3s ease;
+        }
 
-    .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 15px 20px;
-        cursor: pointer;
-        border-radius: 50%;
-        font-size: 18px;
-        transition: background-color 0.3s ease;
-        z-index: 10;
-    }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
 
-    .carousel-button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-    .carousel-button.prev {
-        left: 10px;
-    }
+        .carousel-button.prev {
+            left: 10px;
+        }
 
-    .carousel-button.next {
-        right: 10px;
-    }
+        .carousel-button.next {
+            right: 10px;
+        }
 
-    .carousel-button:disabled {
-        background-color: rgba(0, 0, 0, 0.2);
-        cursor: not-allowed;
-    }
+        .carousel-button:disabled {
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: not-allowed;
+        }
 
-    .thumbnails {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-        overflow-x: auto;
-        padding: 10px 0;
-        scroll-behavior: smooth;
-    }
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
 
-    .thumbnail {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        cursor: pointer;
-        border-radius: 4px;
-        opacity: 0.6;
-        transition: all 0.3s ease;
-    }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
 
-    .thumbnail.active {
-        opacity: 1;
-        border: 2px solid #2196F3;
-        transform: scale(1.1);
-    }
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid #2196F3;
+            transform: scale(1.1);
+        }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -205,65 +205,65 @@ if(isset($_FILES['photos'])) {
     </div>
 
     <script>
-    let currentImageIndex = 0;
-    const images = document.querySelectorAll('.thumbnail');
-    const totalImages = images.length;
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.thumbnail');
+        const totalImages = images.length;
 
-    function updateButtons() {
-        document.getElementById('prevButton').disabled = currentImageIndex === 0;
-        document.getElementById('nextButton').disabled = currentImageIndex === totalImages - 1;
-    }
+        function updateButtons() {
+            document.getElementById('prevButton').disabled = currentImageIndex === 0;
+            document.getElementById('nextButton').disabled = currentImageIndex === totalImages - 1;
+        }
 
-    function changeMainImage(src, thumbnail, index) {
-        const mainImage = document.getElementById('main-image');
-        mainImage.style.opacity = '0';
-        
-        setTimeout(() => {
-            mainImage.src = src;
-            mainImage.style.opacity = '1';
-        }, 200);
+        function changeMainImage(src, thumbnail, index) {
+            const mainImage = document.getElementById('main-image');
+            mainImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                mainImage.src = src;
+                mainImage.style.opacity = '1';
+            }, 200);
 
-        document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
-        thumbnail.classList.add('active');
-        
-        currentImageIndex = index;
-        updateButtons();
+            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            thumbnail.classList.add('active');
+            
+            currentImageIndex = index;
+            updateButtons();
 
-        // Faire défiler les miniatures pour centrer l'image active
-        const thumbnailsContainer = document.getElementById('thumbnails-container');
-        const thumbnailWidth = thumbnail.offsetWidth + 10; // 10 pour le gap
-        const scrollPosition = thumbnail.offsetLeft - (thumbnailsContainer.offsetWidth / 2) + (thumbnailWidth / 2);
-        thumbnailsContainer.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
+            // Faire défiler les miniatures pour centrer l'image active
+            const thumbnailsContainer = document.getElementById('thumbnails-container');
+            const thumbnailWidth = thumbnail.offsetWidth + 10; // 10 pour le gap
+            const scrollPosition = thumbnail.offsetLeft - (thumbnailsContainer.offsetWidth / 2) + (thumbnailWidth / 2);
+            thumbnailsContainer.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        function nextImage() {
+            if (currentImageIndex < totalImages - 1) {
+                const nextThumbnail = document.querySelector(`[data-index="${currentImageIndex + 1}"]`);
+                changeMainImage(nextThumbnail.src, nextThumbnail, currentImageIndex + 1);
+            }
+        }
+
+        function previousImage() {
+            if (currentImageIndex > 0) {
+                const prevThumbnail = document.querySelector(`[data-index="${currentImageIndex - 1}"]`);
+                changeMainImage(prevThumbnail.src, prevThumbnail, currentImageIndex - 1);
+            }
+        }
+
+        // Ajout des contrôles clavier
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                previousImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            }
         });
-    }
 
-    function nextImage() {
-        if (currentImageIndex < totalImages - 1) {
-            const nextThumbnail = document.querySelector(`[data-index="${currentImageIndex + 1}"]`);
-            changeMainImage(nextThumbnail.src, nextThumbnail, currentImageIndex + 1);
-        }
-    }
-
-    function previousImage() {
-        if (currentImageIndex > 0) {
-            const prevThumbnail = document.querySelector(`[data-index="${currentImageIndex - 1}"]`);
-            changeMainImage(prevThumbnail.src, prevThumbnail, currentImageIndex - 1);
-        }
-    }
-
-    // Ajout des contrôles clavier
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-            previousImage();
-        } else if (e.key === 'ArrowRight') {
-            nextImage();
-        }
-    });
-
-    // Initialisation
-    updateButtons();
-</script>
+        // Initialisation
+        updateButtons();
+    </script>
 </body>
 </html>

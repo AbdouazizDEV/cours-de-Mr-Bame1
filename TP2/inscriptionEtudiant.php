@@ -83,6 +83,20 @@
             font-style: italic;
             font-size: 0.9em;
         }
+        .form-group div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .form-group label[for] {
+            display: inline;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -94,8 +108,8 @@
     <form action="traiterInscription.php" method="POST" enctype="multipart/form-data">
         <div class="id-numbers">
             <div>
-                <label>N° Carte d'Etudiant</label>
-                <input type="text" pattern="\d*" maxlength="8">
+                <label>N° d'Etudiant</label>
+                <input type="text" pattern="\d*" maxlength="9">
             </div>
             <div>
                 <label>N° Quittance d'inscription</label>
@@ -132,13 +146,20 @@
                 </div>
                 <div class="form-group">
                     <label>Sexe</label>
-                    <input type="radio" name="sexe" class="small-input">
-                    <label for="sexe_homme">Homme</label>
-                    <input type="radio" name="sexe" class="small-input">
-                    <label for="sexe_femme">Femme</label>
-                    <input type="radio" name="sexe" class="small-input">
-                    <label for="sexe_autre">Autre</label>
-                    <input type="radio" name="sexe" class="small-input">
+                    <div>
+                        <input type="radio" name="sexe" class="small-input">
+                        <label for="sexe_homme">Homme</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sexe" class="small-input">
+                        <label for="sexe_femme">Femme</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="sexe" class="small-input">
+                        <label for="sexe_autre">Autre</label>
+                    </div>
+                   
+                    <!-- <input type="radio" name="sexe" class="small-input"> -->
                 </div>
                 <div class="form-group">
                     <label>Prénom 3</label>

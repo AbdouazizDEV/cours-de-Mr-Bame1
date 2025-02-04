@@ -21,6 +21,7 @@
         ?>
     </div>
 
+
     <hr>
 <h1>Exercices PHP2</h1>
     <!-- Tableaux des tables de multiplication -->
@@ -77,7 +78,7 @@
     </div>
 
     <hr>
-<h1>Exercices PHP5$</h1>
+<h1>Exercices PHP5</h1>
     <!-- Informations des étudiants -->
     <div class="students-section">
         <?php
@@ -155,9 +156,99 @@
     <!-- on affiche le formulaire contneu dans le fichier Fromulaire.php -->
      <?php include 'Fromulaire.php';?>
 
+            <hr>
+        <h1>Formulair de saisie d'un etudiant </h1>
+        <form action="FormulairEtudiant.php" method="post">
+            <div class="code">
+                <label for="code">Numero Etudiant:</label>
+                <input type="text" id="code" name="code" required>
+                <span class="error"><?php echo $codeError;?></span><br><br>
+            </div>
+            <div class="marque">
+                <label for="marque">Nom:</label>
+                <input type="text" id="marque" name="marque" required>
+                <span class="error"><?php echo $marqueError;?></span><br><br>
+            </div>
+            <div class="prix">
+                <label for="prix">Prenom:</label>
+                <input type="text" id="prix" name="prix" required>
+                <span class="error"><?php echo $prixError;?></span><br><br>
+            </div>
+            <div class="Adresse">
+                <label for="Adresse">Adresse:</label>
+                <input type="text" id="Adresse" name="Adresse" required>
+                <span class="error"><?php echo $AdresseError;?></span><br><br>
+            </div>
+            <div>
+                <input type="submit" value="Enregistrer">
+            </div>
+        </form>
      
 <hr>
     
+<style>
+    form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.code, .marque, .prix, .Adresse {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.success {
+    color: green;
+    background: #e8f5e9;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+</style>
 </body>
 </html>
